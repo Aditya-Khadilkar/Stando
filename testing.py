@@ -42,7 +42,7 @@ h = cap.set(4, scb/2)
 
 timeout = time.time() + 3
 
-img_path = './ghost1.png'
+img_path = './GER.png'      #CHANGE IMAGES HERE.
 logo = cv2.imread(img_path, -1)
 watermark = image_resize(logo, height= 200)
 watermark = cv2.cvtColor(watermark, cv2.COLOR_BGR2BGRA)
