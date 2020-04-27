@@ -1,10 +1,9 @@
+import os
 import numpy as np
 import cv2
-import ctypes
 import time
 
-user32 = ctypes.windll.user32
-scl,scb = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
+scl,scb = 1920, 1080
 print(scl,scb) #screen metrics
 
 
@@ -42,7 +41,8 @@ h = cap.set(4, scb/2)
 
 timeout = time.time() + 3
 
-img_path = './GER.png'      #CHANGE IMAGES HERE.
+img_name = 'GER.png'
+img_path = os.path.join('assets', img_name)      #CHANGE IMAGES HERE.
 logo = cv2.imread(img_path, -1)
 watermark = image_resize(logo, height= 200)
 watermark = cv2.cvtColor(watermark, cv2.COLOR_BGR2BGRA)
